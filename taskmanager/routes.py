@@ -41,7 +41,8 @@ def delete_category(category_id):
     db.session.commit()
     return redirect(url_for("categories"))
 
-    @app.route("/add_task", methods=["GET", "POST"])
+
+@app.route("/add_task", methods=["GET", "POST"])
 def add_task():
     categories = list(Category.query.order_by(Category.category_name).all())
     if request.method == "POST":
